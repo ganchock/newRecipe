@@ -8,6 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, "docs"),
     },
     mode: "development",
+    devtool: "inline-source-map",
     devServer: {
         static: "./docs",
     },

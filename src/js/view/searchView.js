@@ -24,7 +24,7 @@ export const clearSearchResult = () => {
     elements.pageButtons.innerHTML = "";
 };
 export const getInput = () => elements.searchInput.value;
-export const renderRecipes = (recipes, currentPage = 1, resPerPage = 10) => {
+export const renderRecipes = (recipes, currentPage = 1, resPerPage = 5) => {
     // Хайлтын үр дүнг хуудаслаж үзүүлэх
     // page = 2, start = 10, end = 20
     const start = (currentPage - 1) * resPerPage;
