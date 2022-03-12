@@ -8,13 +8,20 @@ export default class Recipe {
         const result = await axios(
             "https://forkify-api.herokuapp.com/api/get?rId=" + this.id
         );
-        this.image_url = result.data.recipe.image_url;
-        this.ingredients = result.data.recipe.ingredients;
         this.publisher = result.data.recipe.publisher;
-        this.publisher_url = result.data.recipe.publisher_url;
-        this.recipe_id = result.data.recipe.recipe_id;
-        this.social_rank = result.data.recipe.social_rank;
+        this.ingredients = result.data.recipe.ingredients;
         this.source_url = result.data.recipe.source_url;
+        this.image_url = result.data.recipe.image_url;
+        this.publisher_url = result.data.recipe.publisher_url;
         this.title = result.data.recipe.title;
+        this.social_rank = result.data.recipe.social_rank;
+    }
+
+    calcTime() {
+        // Найрлага бүрт ойролцоогоор 5 минут зарцуулна
+        this.time = this.ingredients.length * 5;
+    }
+    calcHuniiToo() {
+        this.huniiToo = 4;
     }
 }
